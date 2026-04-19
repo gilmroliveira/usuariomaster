@@ -1,0 +1,15 @@
+<h1>Minhas Tarefas</h1>
+<form method="GET">
+    <input type="text" name="q" placeholder="Buscar tarefa...">
+    <button type="submit">Buscar</button>
+</form>
+<a href="{% url 'tarefa_create' %}">Nova Tarefa</a>
+<ul>
+    {% for tarefa in object_list %}
+        <li>
+            {{ tarefa.titulo }} - 
+            <a href="{% url 'tarefa_update' tarefa.id %}">Editar</a> | 
+            <a href="{% url 'tarefa_delete' tarefa.id %}">Apagar</a>
+        </li>
+    {% endfor %}
+</ul>

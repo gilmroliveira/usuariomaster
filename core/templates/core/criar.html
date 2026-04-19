@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Produto</title>
+    <style>body { font-family: Arial, sans-serif; margin: 40px; } form { max-width: 600px; }</style>
+</head>
+<body>
+    <h1>Criar Novo Produto</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <br>
+    <a href="{% url 'listar_produtos' %}">← Voltar para Lista</a>
+</body>
+</html>

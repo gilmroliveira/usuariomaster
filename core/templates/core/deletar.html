@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletar Produto</title>
+    <style>body { font-family: Arial, sans-serif; margin: 40px; text-align: center; }</style>
+</head>
+<body>
+    <h1>Confirmar Exclusão</h1>
+    <p>Tem certeza que deseja deletar <strong>{{ produto.nome }}</strong>?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" style="background:red;color:white;padding:10px 20px;">Sim, Deletar</button>
+    </form>
+    
+    <br><br>
+    <a href="{% url 'listar_produtos' %}">Cancelar</a>
+</body>
+</html>
